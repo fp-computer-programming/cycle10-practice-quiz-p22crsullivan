@@ -4,13 +4,12 @@ from operator import index
 
 
 def food_costs(groceries, costs):
-    groceries_mod = groceries
 # Create for loop to enumerate the lists
-    for index, value in enumerate(groceries, costs):
-        amount = costs[0]
-        del costs[0]
-        groceries_mod = groceries[index] + ":" + " " + amount
-    return groceries_mod
+    for items in groceries:
+        for index, value in enumerate(items):
+            groceries_mod = value + ": $" + str(costs[0])
+            del(costs[0])
+        return groceries_mod
 
 
 
